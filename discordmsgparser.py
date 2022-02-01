@@ -14,7 +14,7 @@ from math import ceil
 logger.remove()
 logger.add(stderr, format="<white>{time:HH:mm:ss}</white> | <level>{level: <8}</level> | <cyan>{line}</cyan> - <white>{message}</white>")
 clear = lambda: system('cls')
-print('Telegram Channel - https://t.me/n4z4v0d\n')
+print('')
 windll.kernel32.SetConsoleTitleW('Discord Messages Parser | by NAZAVOD')
 gtranslate = GoogleTranslate()
 
@@ -45,7 +45,8 @@ def parseallchat():
 			if r.status_code == 200 and len(loads(r.text)) > 1:
 				for usermessage in loads(r.text):
 					current_message = str(usermessage['content']).replace('\n', '').replace('\r', '')
-					if len(current_message) > 0 and current_message != ' ' and current_message != ' ' and current_message.count(' ') >= min_words-1 and search(r'<.*?>', current_message) == None and match('^[a-zA-Zа-яА-ЯёЁ 0-9 ?.-_!()]+$', current_message) is not None:
+					if len(current_message) > 0 and current_message != ' ' and current_message != ' ' and curre
+				nt_message.count(' ') >= min_words-1 and search(r'<.*?>', current_message) == None and match('^[a-zA-Zа-яА-ЯёЁ 0-9 ?.-_!()]+$', current_message) is not None:
 							messages.append(current_message+'\n')
 							cycle_parsed += 1
 					lastid = usermessage['id']
